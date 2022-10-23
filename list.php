@@ -3,7 +3,7 @@ include 'koneksi.php';
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
-    $query = "DELETE FROM siswa WHERE id=$id";
+    $query = "DELETE FROM siswa WHERE id='$id'";
     $sql = mysqli_query($conn, $query);
 
     if ($sql) {

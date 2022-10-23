@@ -26,8 +26,8 @@ if (isset($_POST['submit'])) {
     <title>Document</title>
 </head>
 <body>
-    <table>
-        <form method="post">
+    <form method="post">
+        <table>
             <tr>
                 <td>No</td>
                 <td>:</td>
@@ -48,8 +48,8 @@ if (isset($_POST['submit'])) {
                 <td>:</td>
                 <td><input type="text" placeholder="Masukkan Kelas..." name="kelas"></td>
             </tr>
-            <button type="submit" name="submit">DAFTAR</button>
-        </form>
-    </table>
+        </table>
+        <button type="submit" name="submit">DAFTAR</button>
+</form>
 </body>
 </html>

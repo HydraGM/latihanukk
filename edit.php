@@ -11,11 +11,12 @@ if ($_GET['id']) {
     }
 
 if (isset($_POST['submit'])) {
+    $id = $_POST['id'];
     $nama = $_POST['nama'];
     $nisn = $_POST['nisn'];
     $kelas = $_POST['kelas'];
 
-    $query = mysqli_query($conn, "UPDATE siswa SET nama='$nama', nisn='$nisn', kelas=$'kelas' WHERE id='$id'");
+    $query = mysqli_query($conn, "UPDATE siswa SET id='$id', nama='$nama', nisn='$nisn', kelas='$kelas' WHERE id='$id' ");
 
     if ($query) {
         header('Location: list.php');
@@ -34,8 +35,13 @@ if (isset($_POST['submit'])) {
     <title>Document</title>
 </head>
 <body>
+<form method="post">
     <table>
-    <form method="post">
+        <tr>
+            <td>No</td>
+            <td>:</td>
+            <td><input type="text" name="id" value="<?php echo $data['id']; ?>"></td>
+        </tr>
         <tr>
             <td>Nama</td>
             <td>:</td>
@@ -51,8 +57,8 @@ if (isset($_POST['submit'])) {
             <td>:</td>
             <td><input type="text" name="kelas" value="<?php echo $data['kelas']; ?>"></td>
         </tr>
-        <button type="submit" name="submit">SIMPAN</button>
-    </form>
-</table>
+    </table>
+    <button type="submit" name="submit">SIMPAN</button>
+</form>
 </body>
 </html>
